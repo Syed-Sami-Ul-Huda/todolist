@@ -1,0 +1,21 @@
+{
+  "name": "todo-app-nodejs",
+  "version": "1.0.0",
+  "description": "Simple app for managing your daily todos records ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Syed Sami Ul Huda",
+  "license": "ISC",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.5.7",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

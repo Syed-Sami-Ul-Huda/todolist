@@ -1,0 +1,55 @@
+<html>
+<head> 
+<title> ToDo App </title>
+ 
+ <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+ <link rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css'>
+ <link href="/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    
+<div class="container">
+<h1> A Simple ToDo List App </h1>
+
+<form action ="/addtask" method="POST">
+
+<input type="text" name="newtask" placeholder="add new task">
+<button> Add Task </button>
+<% if(locals.add != ''){  %>
+ <div class="alert alert-danger" role="alert"> 
+    <%= locals.add %>
+  </div> 
+<% } %>
+
+<h1> Added Task </h1>
+
+
+<% for( let i = 0; i < task.length; i++){ %>
+    <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
+<% } %>
+
+<button formaction="/removetask" type="submit" id="top"> Remove </button>
+<% if(locals.remove != ''){  %>
+    <div class="alert alert-danger" role="alert"> 
+       <%= locals.remove %>
+     </div> 
+   <% } %>
+
+<h1> Completed task </h1>
+
+<% for(let i = 0; i < complete.length; i++){ %>
+      <li><input type="checkbox" name="check2" value="<%= task[i] %>"><%= complete[i] %> </li>
+<% } %>
+  
+<button formaction="/deletetask" type="submit" id="top"> Delete </button>
+<% if(locals.delete != ''){  %>
+    <div class="alert alert-danger" role="alert"> 
+        <%= locals.delete %>
+      </div> 
+    <% } %>
+</form>
+
+</div>
+</body>
+</html>
